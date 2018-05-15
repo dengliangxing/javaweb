@@ -16,8 +16,8 @@ public class BubbleSort extends Sort {
     }
   }
   
-  /** 我的数组帮助类
-   * 用于测试这个类
+  /**
+   * 用于测试这个类.
    * @author deng
    * @version v1.0
    */

@@ -4,4 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id = "userDao" class = "com.itheima.ioc.UserDaoImpl"/>
+    <bean id = "userService" class = "com.itheima.ioc.UserServiceImp">
+    	<property name="userDao" ref = "userDao"/>
+    </bean>
 </beans>

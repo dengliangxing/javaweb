@@ -4,7 +4,7 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.CustomerMapper">
 	<!-- <if>元素使用 -->
-<!-- 	<select id="findCustomerByNameAndJobs" parameterType="com.itheima.po.Customer" 
+	<select id="findCustomerByNameAndJobs" parameterType="com.itheima.po.Customer" 
 										   resultType="com.itheima.po.Customer"> 
 		select * from t_customer where 1=1 
 		<if test="username !=null and username !=''"> 
@@ -12,7 +12,7 @@
 		</if> <if test="jobs !=null and jobs !=''"> 
 			and jobs= #{jobs} 
 		</if> 
-	</select> -->
+	</select>
 	<!-- <where>元素 -->
 <!-- 	<select id="findCustomerByNameAndJobs" parameterType="com.itheima.po.Customer" 
 											resultType="com.itheima.po.Customer"> 
@@ -27,7 +27,7 @@
 		</where> 
 	</select> -->
 	<!-- <trim>元素 -->
-	<select id="findCustomerByNameAndJobs" parameterType="com.itheima.po.Customer"
+<!-- 	<select id="findCustomerByNameAndJobs" parameterType="com.itheima.po.Customer"
 		resultType="com.itheima.po.Customer">
 		select * from t_customer
 		<trim prefix="where" prefixOverrides="and">
@@ -40,7 +40,7 @@
 		</trim>
 	</select>
 
-	<!--<choose>(<when>、<otherwise>)元素使用 -->
+	<choose>(<when>、<otherwise>)元素使用
 	<select id="findCustomerByNameOrJobs" parameterType="com.itheima.po.Customer"
 		resultType="com.itheima.po.Customer">
 		select * from t_customer where 1=1
@@ -57,7 +57,7 @@
 		</choose>
 	</select>
 
-	<!-- <set>元素 -->
+	<set>元素
 	<update id="updateCustomer" parameterType="com.itheima.po.Customer">
 		update t_customer
 		<set>
@@ -74,7 +74,7 @@
 		where id=#{id}
 	</update>
 
-	<!--<foreach>元素使用 -->
+	<foreach>元素使用
 	<select id="findCustomerByIds" parameterType="List"
 		resultType="com.itheima.po.Customer">
 		select * from t_customer where id in
@@ -84,14 +84,14 @@
 		</foreach>
 	</select>
 
-	<!--<bind>元素的使用：根据客户名模糊查询客户信息 -->
+	<bind>元素的使用：根据客户名模糊查询客户信息
 	<select id="findCustomerByName" parameterType="com.itheima.po.Customer"
 		resultType="com.itheima.po.Customer">
-		<!--_parameter.getUsername()也可直接写成传入的字段属性名，即username -->
+		_parameter.getUsername()也可直接写成传入的字段属性名，即username
 		<bind name="pattern_username" value="'%'+_parameter.getUsername()+'%'" />
 		select * from t_customer
 		where
 		username like #{pattern_username}
 	</select>
-
+ -->
 </mapper>

@@ -16,8 +16,8 @@ public class MybatisTest {
 		// 创建Customer对象，封装需要组合查询的条件
 		Customer customer = new Customer();
 		customer.setUsername("jack");
-//		customer.setJobs("teacher");
-		// 执行SqlSession的查询方法，返回结果集
+		customer.setJobs("teacher");
+		 //执行SqlSession的查询方法，返回结果集
 	   List<Customer> customers = session.selectList("com.itheima.mapper" 
 		       + ".CustomerMapper.findCustomerByNameAndJobs",customer);
 		// 输出查询结果信息
@@ -32,7 +32,7 @@ public class MybatisTest {
 	/**
 	 * 根据客户姓名或职业查询客户信息列表
 	 */
-	@Test
+	/*@Test
 	public void findCustomerByNameOrJobsTest(){
 	    // 通过工具类生成SqlSession对象
 	    SqlSession session = MybatisUtils.getSession();
@@ -52,9 +52,9 @@ public class MybatisTest {
 	    session.close();
 	}
 
-	/**
+	*//**
 	 * 更新客户
-	 */
+	 *//*
 	@Test
 	public void updateCustomerTest() {		
 	    // 获取SqlSession
@@ -78,9 +78,9 @@ public class MybatisTest {
 	    sqlSession.close();
 	}
 	
-	/**
+	*//**
 	 * 根据客户编号批量查询客户信息
-	 */
+	 *//*
 	@Test
 	public void findCustomerByIdsTest(){
 	    // 获取SqlSession
@@ -101,9 +101,9 @@ public class MybatisTest {
 	    session.close();
 	}
 
-	/**
+	*//**
 	 * bind元素的使用：根据客户名模糊查询客户信息 
-	 */
+	 *//*
 	@Test
 	public void findCustomerByNameTest(){
 	    // 通过工具类生成SqlSession对象
@@ -121,6 +121,6 @@ public class MybatisTest {
 	    }
 	    // 关闭SqlSession
 	    session.close();
-	}
+	}*/
 
 }
